@@ -1,0 +1,33 @@
+<section class="menu-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="desktop">
+                    <ul class="reviera-nav pull-right">
+                        <li ng-repeat='(key, value) in linksDesktop' ng-click="getMenuItem($event, key)">
+                            <a href="" class="menu-item" >{{value}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div ng-click="showMenu(showMenu1)">
+                        <img src="../../img/mobile/ico-menu.png"  class="ico-menu-mobile pull-right">
+                    </div>
+                    <div ng-if="showMenu1">
+                        <ul class="reviera-nav-mobile pull-right">
+                            <li ng-repeat='(key, value) in linksMobile'>
+                                <a href="" class="menu-item-mobile" ng-click="gotoAnchor(key); showMenu(showMenu1)">{{value}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

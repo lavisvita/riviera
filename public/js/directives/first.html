@@ -1,0 +1,40 @@
+<section class="advantages">
+    <div class="desktop">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="advantage-img-container">
+                        <img src="img/{{picture}}" width="100%">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" >
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <h3 class="advantage-header">{{header}}</h3>
+                        </div>
+                    </div>
+                    <p class="get-content" ng-blur="getThisContent()" item-id="{{textid}}" contenteditable="{{editable}}">{{text}}</p>
+                    <a href="" class="btn-send-request col-lg-12" ng-click="showForm()">Отправить заявку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile">
+
+        <div class="advantage-img-container-mob">
+            <img src="img/{{picture}}">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h2 class="advantage-header">{{header}}</h2>
+                </div>
+            </div>
+        </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+            <p class="get-content" ng-blur="getThisContent()" item-id="{{textid}}" contenteditable="{{editable}}">{{text}}</p>
+            <a href="" class="btn-send-request-res-mob col-lg-12" ng-click="showForm()">Отправить заявку</a>
+        </div>
+
+    </div>
+</section>

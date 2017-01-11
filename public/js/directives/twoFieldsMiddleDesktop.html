@@ -1,0 +1,16 @@
+<form>
+    <input class="checkSenderName"
+           type="text" senderName
+           ng-model="senderName"
+           ng-keyup="checkSenderName($event, senderName)"
+           placeholder="Ваше имя">
+    <input type="phone" senderPhone
+           class="checkSenderPhone"
+           ng-keyup="checkSenderPhone($event, senderPhone)"
+           name="text"
+           ng-model="senderPhone"
+           mask-validate="true"
+           placeholder="Ваш телефон: +7 999 999 99 99"
+           mask="+7 999 999 99 99">
+    <button class="btn-request" ng-click="postDataOfSender('Заявка с сайта Reviera', senderName, senderPhone)">Отправить заявку</button>
+</form>

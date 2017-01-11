@@ -1,0 +1,307 @@
+<section ng-controller='homeCtrl'>
+    <div class="filled" ng-if="formRequestVisible"></div>
+    <div class="filled" ng-if="formConfirmation"></div>
+    <div class="form-payment-options-variant" ng-if="formConfirmation">
+        <div>
+            <div class="form-payment-decor form-payment-decor2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 pull-right">
+                        <span class="glyphicon glyphicon-remove-circle btn-lg pull-right" ng-click="closeFormConfirmation()"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                        <!--<div class="header-option-variant">{{optionVariant}}</div>-->
+                    </div>
+                </div>
+                <div class="confirmation-text">Спасибо! Ваша заявка принята!</div>
+            </div>
+        </div>
+    </div>
+    <!--  <div ng-click="doEditable()"><a href="">Перейти в редактируемый режим</a></div> переход в режим редактирования -->
+   <menu></menu>
+    <header-desktop class="desktop"  slides="sliderTopData" ></header-desktop> <!-- sliderone="sliderOne" -->
+    <header-mobile class="mobile" sliderone="sliderOne"></header-mobile>
+    <span id="advantages"></span>
+    <div ng-repeat="content in contentText">
+        <trigger formrequestvisible="formRequestVisible" picture="content.pic" index="$index" text='content.text' textid='content.id' header="content.header" editable="editable"></trigger> <!-- Значение переменной editable даёт возможность редактировать контент, мы передаём значение true для атрибута contenteditable-->
+    </div>
+    <section class="resources desktop">
+        <div class="container">
+            <div class="row">
+                <span class="resources-container col-xs-3" ng-repeat="item in resourcesContent">
+                    <div class="col-xs-12">
+                        <resources editable="editable" desc="item.desc" quantity="item.quantity" resid="item.resid"></resources>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="resources mobile">
+        <div class="container">
+            <div class="row">
+                <span class="resources-container col-xs-6" ng-repeat="item in resourcesContent">
+                    <div class="col-xs-12">
+                        <resources editable="editable" desc="item.desc" quantity="item.quantity" resid="item.resid"></resources>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="slider2 desktop">
+        <div class="container">
+            <div class="row">
+                <middle-slider sliderdata="sliderMiddleData"></middle-slider>
+            </div>
+        </div>
+    </section>
+    <section class="slider-resources mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 slider-resources-container">
+                    <slick dots="true" infinite="true" speed="300" slides-to-show="1" touch-move="false" slides-to-scroll="1">
+                        <div ng-repeat="slide in sliderTwo" class="image">
+                            <div class="layer">
+                                <img ng-src="img/resources-mobile/{{slide.imgName}}">
+                                <div class="slider-resources-text">
+                                    <h3>{{slide.header}}</h3>
+                                    <span>{{slide.text}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </slick>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section6">
+        <div style="max-width: 768px; width: 100%; height: 400px; margin: 40px auto">
+            <div class="col-lg-12 text-center">
+                <!--<iframe src="https://www.youtube.com/embed/nn0VoXlzQ50?rel=0" frameborder="0" allowfullscreen style="margin: 30px"></iframe>-->
+                <iframe style=" max-width: 768px; width: 100%; height: 400px; " src="https://www.youtube.com/embed/V2tC8rXWr68" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="form-request-container desktop">
+        <div class="container">
+            <div class="row" id="twoRequestFields">
+                <div class="col-xs-12">
+                    <div class="request-form-two-fields">
+                        <two-fields-middle-desktop></two-fields-middle-desktop>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="layouts"></span>
+    </section>
+    <section class="mobile">
+        <div class="best-house">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="logo-container">
+                            <div class="logo">
+                                <img ng-src="../img/logo.png" >
+                            </div>
+                            <div class="slogan">
+                                <h3>Лучший дом корпорации</h3>
+                                <h3>Убедитесь в этом лично</h3>
+                            </div>
+                            <button class="btn-request-besthouse-mobile" ng-click="showForm('Записаться на просмотр')">Записаться на просмотр</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="layouts"></span>
+    </section>
+
+    <section class="plans-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="main-headers">Планировки</h2>
+                    <section class="section8 desktop">
+                        <div class="row">
+                            <div class="col-xs-12 image-container col-lg-push-3">
+                                <slick>
+                                    <div ng-repeat="slide in plans" class="image">
+                                        <div class="layer">
+                                            <div>
+                                                <!--<a id="{{slide.imgName}}" href="img/plans/{{slide.imgName}}" fancyboxable="plan1">-->
+                                                    <img ng-src="img/plans/{{slide.imgName}}">
+                                                <!--</a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </slick>
+                                <span id="payments"></span>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="section8 mobile">
+                        <div class="row">
+                            <div class="col-xs-12 image-container col-xs-push-1">
+                                <slick dots="true" infinite="true" speed="300" slides-to-show="1" touch-move="false" slides-to-scroll="1">
+                                    <div ng-repeat="slide in plans" class="image">
+                                        <div class="layer">
+                                            <div><img ng-src="img/plans/{{slide.imgName}}"></div>
+                                        </div>
+                                    </div>
+                                </slick>
+                                <span id="payments"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <payment-options showform="showForm" showoptionvariant="showOptionVariant"></payment-options>
+
+    <div class="form-payment-options-variant" ng-if="formRequestVisible">
+        <div >
+            <div class="form-payment-decor">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 pull-right">
+                        <span class="glyphicon glyphicon-remove-circle btn-lg pull-right" ng-click="closeForm()"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                        <div class="header-option-variant">{{optionVariant}}</div>
+                    </div>
+                </div>
+                <dialog-form></dialog-form>
+            </div>
+        </div>
+    </div>
+    <section class="from-request-container bigFormThreeFields desktop">
+        <div class="container">
+            <div class="row">
+                <div ng-switch="optionItem">
+                    <div ng-switch-when="ipoteka">
+                        <div class="col-xs-12 text-center logo-item-container">
+                            Ипотека
+                        </div>
+                    </div>
+                    <div ng-switch-when="mothercap">
+                        <div class="col-xs-12 text-center logo-item-container">
+                            Материнский капитал
+                        </div>
+                    </div>
+                    <div ng-switch-when="cash">
+                        <div class="col-xs-12 text-center logo-item-container">
+                            Оплата наличными
+                        </div>
+                    </div>
+                    <div ng-switch-when="military">
+                        <div class="col-xs-12 text-center logo-item-container">
+                            Военная ипотека
+                        </div>
+                    </div>
+                    <div ng-switch-default>
+                        <div class="col-xs-12 text-center logo-item-container">
+                            Ипотека
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-xs-2 col-sm-3 col-md-2 col-lg-2 col-lg-offset-2 col-md-offset-2 logo-item-container">-->
+                    <!--<img class="logo-item" ng-src="img/pic-logo.png">-->
+                <!--</div>-->
+                <!--<div class="col-xs-2 col-sm-3 col-md-2 col-lg-2 logo-item-container" >-->
+                    <!--<img class="logo-item" ng-src="img/pic-logo.png">-->
+                <!--</div>-->
+                <!--<div class="col-xs-2 col-sm-3 col-md-2 col-lg-2 logo-item-container">-->
+                    <!--<img class="logo-item" ng-src="img/pic-logo.png">-->
+                <!--</div>-->
+                <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 logo-item-container">-->
+                    <!--<img class="logo-item" ng-src="img/pic-logo.png">-->
+                <!--</div>-->
+            </div>
+            <div class="row" id="threeFields">
+                <div class="col-xs-12">
+                    <div class="three-fields-form">
+                        <three-fields-middle-desktop optionitem="optionItem"></three-fields-middle-desktop>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="documents"></span>
+    </section>
+
+    <section class="section10 desktop">
+        <div class="container">
+            <div class="row documentation">
+                <div class = "row" style="margin-right: 0;">
+                    <div class="col-lg-12 documentation-title">
+                        <h2 class="main-headers">Документация</h2>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="doc-item"><a href="img/docs/declaration.pdf" target="_blank"><img src="img/docs/decl.jpg"></a></div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="doc-item"><a href="img/docs/declaration.pdf" target="_blank"><img src="img/docs/decl.jpg"></a></div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="doc-item"><a href="img/docs/declaration.pdf" target="_blank"><img src="img/docs/decl.jpg"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-documentation mobile" id="documents1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 image-container">
+                    <slick dots="true" infinite="true" speed="300" slides-to-show="1" touch-move="false" slides-to-scroll="1">
+                        <div ng-repeat="slide in documentations" class="image">
+                            <div class="layer">
+                                <div><a href="img/docs/{{slide.fileName}}" target="_blank"><img ng-src="img/docs/{{slide.imgName}}"></a></div>
+                            </div>
+                        </div>
+                    </slick>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container desktop">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <footer-form-desktop></footer-form-desktop>
+            </div>
+        </div>
+    </div>
+    <div class="container mobile" id="contacts1">
+        <div class="row">
+            <footer-form-mobile></footer-form-mobile>
+        </div>
+    </div>
+    <section class="container-map">
+        <yandex-map center="[45.1027534,38.915114]" zoom="17">
+            <ymap-marker ng-repeat="marker in markers" index="$index+1" coordinates="marker.coordinates" properties="marker.properties" options="marker.options"></ymap-marker>
+        </yandex-map>
+        <span id="contacts"></span>
+    </section>
+    <section class="footer desktop">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-6 col-lg-6">
+                    <img class="dev-logo" ng-src="img/logo-dev-ug.png">
+                </div>
+                <div class="col-sd-4 col-md-6 col-lg-6 text-right">
+                    <div class="contacts-container">
+                        <h3>+7 (861) 2-555-222</h3>
+                        <h3>8 (800) 100-07-75</h3>
+                        <span>звонок бесплатный</span>
+                        <span>г. Краснодар, ул. Московская 59/1, 2 этаж</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

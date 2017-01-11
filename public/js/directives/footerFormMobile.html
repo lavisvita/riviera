@@ -1,0 +1,22 @@
+<form class="col-xs-12 bigForm bigForm-footer-mobile pull-right" name="bigForm" > <!-- !!!!!!!!! -->
+    <h4>Связаться с нами</h4>
+    <input class="checkSenderName"
+           type="text" senderName
+           ng-model="senderName"
+           ng-keyup="checkSenderName($event, senderName)"
+           placeholder="Ваше имя">
+    <input type="phone" senderPhone
+           class="checkSenderPhone"
+           ng-keyup="checkSenderPhone($event, senderPhone)"
+           name="text"
+           ng-model="senderPhone"
+           placeholder="+7 999 999 99 99"
+           mask="+7 999 999 99 99">
+    <input type="phone" senderEmail
+           class="checkSenderPhone"
+           ng-keyup="checkSenderEmail($event, senderEmail)"
+           name="text"
+           ng-model="senderEmail"
+           placeholder="Ваш email">
+    <button class="btn-send-request" ng-click="postDataOfSender('Заявка с сайта Reviera', senderName, senderPhone, senderEmail)">Отправить заявку</button>
+</form>

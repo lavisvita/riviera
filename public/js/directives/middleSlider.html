@@ -1,0 +1,15 @@
+<div class="col-lg-12 image-container-slider2">
+    <slick>
+        <div ng-repeat="slide in sliderdata" class="image">
+            <div class="layer">
+                <div class="slider-middle-content-container">
+                    <img ng-src="img/resources/{{slide.pic}}">
+                    <div class="slider-middle-text">
+                        <h3>{{slide.header}}</h3>
+                        <span>{{slide.text}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </slick>
+</div>

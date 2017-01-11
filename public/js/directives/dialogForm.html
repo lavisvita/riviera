@@ -1,0 +1,16 @@
+<form class="bigForm " name="bigForm">
+    <input type="hidden" ng-model="optionVariant" value="{{optionVariant}}">
+    <input class="checkSenderName"
+           type="text" senderName
+           ng-model="senderName"
+           ng-keyup="checkSenderName($event, senderName)"
+           placeholder="Ваше имя">
+    <input type="phone" senderPhone
+           class="checkSenderPhone"
+           ng-keyup="checkSenderPhone($event, senderPhone)"
+           name="text"
+           ng-model="senderPhone"
+           placeholder="+7 999 999 99 99"
+           mask="+7 999 999 99 99">
+    <button id="form-payment-trapezium" ng-click="postDataOfSender(optionVariant, senderName, senderPhone)">Отправить</button>
+</form>

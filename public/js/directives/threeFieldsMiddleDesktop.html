@@ -1,0 +1,21 @@
+<form name="bigForm">
+    <input class="checkSenderName"
+           type="text" senderName
+           ng-model="senderName"
+           ng-keyup="checkSenderName($event, senderName)"
+           placeholder="Ваше имя">
+    <input type="phone" senderPhone
+           class="checkSenderPhone"
+           ng-keyup="checkSenderPhone($event, senderPhone)"
+           name="text"
+           ng-model="senderPhone"
+           placeholder="Ваш телефон: +7 999 999 99 99"
+           mask="+7 999 999 99 99">
+    <input type="phone" senderEmail
+           class="checkSenderPhone"
+           ng-keyup="checkSenderEmail($event, senderEmail)"
+           name="text"
+           ng-model="senderEmail"
+           placeholder="Ваш email">
+    <button id="three-fields-trapezium" ng-click="postDataOfSender(optionitem, senderName, senderPhone, senderEmail)">Отправить заявку</button>
+</form>

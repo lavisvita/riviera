@@ -1,0 +1,27 @@
+<section class="payment-options-container desktop" >
+    <div class="container">
+        <div class="row">
+            <h2 class="main-headers">Cпособы оплаты</h2>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-sm-offset-0 col-md-offset-1 col-lg-offset-2">
+                <a href="" class="payment-item payment-item-active" ng-click="showoptionvariant('ipoteka'); setActiveOption($event)"> <!-- showform('Военная ипотека'); -->
+                    Ипотека<span><span id="payment-item-active"></span></span>
+                </a>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <a href="" class="payment-item" ng-click="showoptionvariant('mothercap'); setActiveOption($event)"> <!-- showform('Военная ипотека'); -->
+                    Материнский капитал
+                </a>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <a href="" class="payment-item" class="col-lg-3" ng-click="showoptionvariant('cash'); setActiveOption($event)"> <!-- showform('Военная ипотека'); -->
+                    Оплата наличными
+                </a>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <a href="" class="payment-item" ng-click="showoptionvariant('military'); setActiveOption($event)"> <!-- showform('Военная ипотека'); -->
+                    Военная ипотека
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
